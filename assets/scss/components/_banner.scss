@@ -6,16 +6,6 @@
         .stars-background {
             position: relative;
             z-index: 2;
-
-            .star-item:nth-child(odd) {
-                opacity: 0.6;
-                animation: starsOdd 3s infinite linear;
-            }
-
-            .star-item:nth-child(even) {
-                opacity: 0.6;
-                animation: starsEven 3s infinite linear;
-            }
         }
 
         #star-background-two {
@@ -48,24 +38,6 @@
             font-weight: 700;
             color: $orange-main;
         }
-    }
-}
-
-@keyframes starsOdd {
-    from {
-        opacity: 0.1;
-    }
-    to {
-        opacity: 0.9;
-    }
-}
-
-@keyframes starsEven {
-    from {
-        opacity: 0.1;
-    }
-    to {
-        opacity: 0.5;
     }
 }
 
