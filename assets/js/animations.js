@@ -54,7 +54,6 @@ const aboutSection = function() {
 }
 aboutSection();
 
-
 // Mercury Function
 const mercury = function() {
     const trigger = document.querySelector('.planets.mercury');
