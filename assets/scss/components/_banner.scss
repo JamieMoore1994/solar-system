@@ -1,0 +1,180 @@
+.banner {
+    position: relative;
+
+    &-stars {
+
+        .stars-background {
+            position: relative;
+            z-index: 2;
+
+            .star-item:nth-child(odd) {
+                opacity: 0.6;
+                animation: starsOdd 3s infinite linear;
+            }
+
+            .star-item:nth-child(even) {
+                opacity: 0.6;
+                animation: starsEven 3s infinite linear;
+            }
+        }
+
+        #star-background-two {
+            margin-top: -1rem;
+            display: block;
+            z-index: 3;
+        }
+    }
+
+    &-intro {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        z-index: 2;
+
+        &__title {
+            color: $grey-main;
+            text-align: center;
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        &__text {
+            color: $grey-main;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 1.2rem;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            color: $orange-main;
+        }
+    }
+}
+
+@keyframes starsOdd {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+@keyframes starsEven {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+// Breakpoints
+
+//400px
+@media screen and (min-width: $xxs) {
+    .banner {
+        &-intro {
+            top: 25%;
+            transform: translate(-50%, -15%);
+
+            &__title {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+//500px
+@media screen and (min-width: $xs) {
+    .banner {
+        &-intro {
+            top: 35%;
+            transform: translate(-50%, -35%);
+        }
+    }
+}
+
+//750px
+@media screen and (min-width: $med) {
+    .banner {
+
+        &-stars {
+
+            #star-background-two {
+                display: none;
+            }
+        }
+    }
+}
+
+//960px
+@media screen and (min-width: $large) {
+    .banner {
+
+        &-title {
+            top: 40%;
+        }
+
+        &-intro {
+            top: 35%;
+            transform: translate(-50%, -35%);
+
+            &__title {
+                font-size: 4.2rem;
+            }
+        }
+    }
+}
+
+//1080px
+@media screen and (min-width: $large) {
+    .banner {
+        height: 90vh;
+        
+        &-intro {
+
+            &__title {
+                font-size: 4.5rem;
+            }
+
+            &__text {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+//1440px
+@media screen and (min-width: $xxl) {
+    .banner {
+
+        &-intro {
+
+            &__title {
+                font-size: 5rem;
+            }
+
+            &__text {
+                font-size: 1.9rem;
+            }
+        }
+    }
+}
+
+//1600px
+@media screen and (min-width: $sl) {
+    .banner {
+
+        &-intro {
+
+            &__title {
+                font-size: 6rem;
+            }
+
+            &__text {
+                font-size: 2.1rem;
+            }
+        }
+    }
+}

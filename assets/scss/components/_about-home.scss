@@ -1,0 +1,246 @@
+.about {
+    position: relative;
+    margin-top: -0.1rem;
+    background-color: $black-main;
+    
+    &-intro {
+        background-color: $black-light;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
+        transform: translateX(-100%);
+        
+
+        &__title {
+            color: $orange-main;
+            font-size: 1.8rem;
+            padding: 1.5rem 0;
+        }
+    
+        &__text {
+            color: $grey-main;
+            font-size: 1.6rem;
+            padding-bottom: 10rem;
+        }
+    }
+
+    .stars-background-intro {
+        position: absolute;
+        top: 50%;
+
+        .star-item:nth-child(odd) {
+            opacity: 0.6;
+            animation: starsOdd 3s infinite linear;
+        }
+
+        .star-item:nth-child(even) {
+            opacity: 0.6;
+            animation: starsEven 3s infinite linear;
+        }
+    }
+}
+
+// Animations
+@keyframes starsOdd {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+@keyframes starsEven {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+//Media queries
+
+//400px
+@media screen and (min-width: $xxs) {
+    .about {
+        .stars-background-intro {
+            top: 34%;
+        }
+    }
+}
+
+//500px
+@media screen and (min-width: $xs) {
+    .about {
+        .stars-background-intro {
+            top: -9%;
+        }
+    }
+}
+
+//600px
+@media screen and (min-width: $small) {
+    .about {
+
+        &-intro {
+            padding: 3rem;
+
+            &__title {
+                font-size: 2rem;
+            }
+        
+            &__text {
+                font-size: 1.6rem;
+            }
+        }
+
+        .stars-background-intro {
+            top: 3%;
+        }
+    }
+}
+
+//750px
+@media screen and (min-width: $med) {
+    .about {
+
+        &-intro {
+            max-width: 80%;
+            clip-path: polygon(0 0, 78% 0, 99% 100%, 0% 100%);
+
+            &__title {
+                font-size: 2.2rem;
+            }
+
+            &__text {
+                max-width: 80%;
+                font-size: 1.6rem;
+            }
+        }
+
+        .stars-background-intro {
+            top: -10%;
+        }
+    }
+}
+
+//960px
+@media screen and (min-width: $large) {
+    .about {
+
+        &-intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 70%;
+            padding: 2rem 4rem;
+
+            &__text {
+                max-width: 80%;
+                line-height: 1.7;
+            }
+        }
+
+        .stars-background-intro {
+            top: -40%;
+        }
+    }
+}
+
+//1080px
+@media screen and (min-width: $xl) {
+    .about {
+        top: -10vh;
+
+        &-intro {
+            z-index: 4;
+
+            &__title {
+                font-size: 2.5rem;
+            }
+
+            &__text {
+                max-width: 80%;
+                font-size: 1.8rem;
+            }
+        }
+
+        .stars-background-intro {
+            top: -58%;
+        }
+    }
+}
+
+//1200px
+@media screen and (min-width: $xxl) {
+    .about {
+        
+        &-intro-container {
+            @include maxWidthMain;
+        }
+
+        .stars-background-intro {
+            top: -84%;
+        }
+    }
+}
+
+//1440px
+@media screen and (min-width: $xxxl) {
+    .about {
+
+        &-intro {
+
+            &__title {
+                font-size: 3rem;
+            }
+
+            &__text {
+                font-size: 2.2rem;
+            }
+        }
+
+        .stars-background-intro {
+            top: -97%;
+        }
+    }
+}
+
+//1600px
+@media screen and (min-width: $sl) {
+    .about {
+        &-intro {
+
+            padding: 4rem 6rem;
+
+            &__title {
+                font-size: 4rem;
+            }
+
+            &__text {
+                font-size: 2.7rem;
+            }
+        }
+
+        .stars-background-intro {
+            top: -115%;
+        }
+    }
+}
+
+// Have to remove the star background because it will scale to every screen size
+@media screen and (min-width: 1700px) {
+    .about {
+        margin-top: -1rem;
+
+        &-intro {
+           width: 65%;
+        }
+        .stars-background-intro {
+            display: none;
+        }
+    }
+}

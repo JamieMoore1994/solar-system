@@ -1,0 +1,29 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    
+    min-width: 320px;
+    line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, ul, a, li {
+    letter-spacing: 0.1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+// overflow x not working on body
+.wrapper {
+    overflow-x: hidden;
+}

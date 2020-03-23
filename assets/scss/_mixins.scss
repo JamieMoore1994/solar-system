@@ -1,0 +1,10 @@
+// Max widths
+@mixin maxWidthExtraLarge {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@mixin maxWidthMain {
+    max-width: 1260px;
+    margin: 0 auto;
+}

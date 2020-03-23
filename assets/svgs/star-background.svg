@@ -1,0 +1,72 @@
+
+<svg id="star-background" class = "stars-background" x="0px"
+	 y="0px" viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g>
+	<rect x="0.5" y="0.5" width="1365" height="767"/>
+	<path d="M1365,1v766H1V1H1365 M1366,0H0v768h1366V0L1366,0z"/>
+</g>
+<g id="stars" class = "star-group">
+	<ellipse class="st0 star-item" cx="221.8" cy="136.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1192.1" cy="473.6" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="297.2" cy="521.3" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="610.1" cy="537.2" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="723.2" cy="183.2" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="482.4" cy="708.9" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1002.7" cy="526.6" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1097.9" cy="369.7" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="670.9" cy="258.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="984.9" cy="732.2" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="221.8" cy="136.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="861.4" cy="531.9" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1110.5" cy="218.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="86.8" cy="65.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="470.9" cy="531.9" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="885.4" cy="589.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="990.1" cy="194.8" rx="5.8" ry="5.8"/>
+	<g>
+		<ellipse class="st0 star-item" cx="210.3" cy="241.4" rx="5.8" ry="5.8"/>
+	</g>
+	<ellipse class="st0 star-item" cx="361" cy="583.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="407.1" cy="65.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1180.6" cy="664.3" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1213.1" cy="455.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1306.2" cy="253.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="844.6" cy="189.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="366.2" cy="364.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="178.9" cy="559.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="92" cy="449.2" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="767.2" cy="35.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="151.7" cy="283.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="98.3" cy="376.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="297.2" cy="461.9" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="556.8" cy="683.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="707.5" cy="670.7" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1104.2" cy="565.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1243.4" cy="590.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1026.8" cy="328.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1219.4" cy="71.9" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1238.2" cy="407.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1092.7" cy="702.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="875" cy="720.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1175.4" cy="270.1" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="407.1" cy="118.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="501.3" cy="47.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="914.8" cy="113.2" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1162.8" cy="264.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="104.6" cy="671.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="303.4" cy="628.3" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1066.5" cy="83.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1256" cy="154.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="1295.8" cy="689.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="233.3" cy="583.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="350.5" cy="672.8" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="751.5" cy="659" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="361" cy="419.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="93" cy="171.5" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="110.8" cy="311.4" rx="5.8" ry="5.8"/>
+	<ellipse class="st0 star-item" cx="291.9" cy="95.2" rx="5.8" ry="5.8"/>
+</g>
+</svg>
