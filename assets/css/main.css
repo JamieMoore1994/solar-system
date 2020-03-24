@@ -7,20 +7,19 @@
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-x: hidden; }
 
 body {
   min-width: 320px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  overflow-x: hidden; }
 
 p, h1, h2, h3, h4, ul, a, li {
   letter-spacing: 0.1rem; }
 
 img {
   max-width: 100%; }
-
-.wrapper {
-  overflow-x: hidden; }
 
 h1, h2, h3, h4 {
   font-family: malaga, serif; }
@@ -33,14 +32,6 @@ p, ul, li, a {
   .banner-stars .stars-background {
     position: relative;
     z-index: 2; }
-    .banner-stars .stars-background .star-item:nth-child(odd) {
-      opacity: 0.6;
-      -webkit-animation: starsOdd 3s infinite linear;
-      animation: starsOdd 3s infinite linear; }
-    .banner-stars .stars-background .star-item:nth-child(even) {
-      opacity: 0.6;
-      -webkit-animation: starsEven 3s infinite linear;
-      animation: starsEven 3s infinite linear; }
   .banner-stars #star-background-two {
     margin-top: -1rem;
     display: block;
@@ -66,30 +57,6 @@ p, ul, li, a {
       letter-spacing: 0.1rem;
       font-weight: 700;
       color: #FFCC00; }
-
-@-webkit-keyframes starsOdd {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.9; } }
-
-@keyframes starsOdd {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.9; } }
-
-@-webkit-keyframes starsEven {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.5; } }
-
-@keyframes starsEven {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.5; } }
 
 @media screen and (min-width: 400px) {
   .banner-intro {
@@ -201,26 +168,6 @@ p, ul, li, a {
   .about .stars-background-intro {
     position: absolute;
     top: 50%; }
-    .about .stars-background-intro .star-item:nth-child(odd) {
-      opacity: 0.6;
-      -webkit-animation: starsOdd 3s infinite linear;
-      animation: starsOdd 3s infinite linear; }
-    .about .stars-background-intro .star-item:nth-child(even) {
-      opacity: 0.6;
-      -webkit-animation: starsEven 3s infinite linear;
-      animation: starsEven 3s infinite linear; }
-
-@keyframes starsOdd {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.9; } }
-
-@keyframes starsEven {
-  from {
-    opacity: 0.1; }
-  to {
-    opacity: 0.5; } }
 
 @media screen and (min-width: 400px) {
   .about .stars-background-intro {
@@ -342,8 +289,11 @@ p, ul, li, a {
   padding: 3rem 0;
   position: relative; }
   .planets-image {
-    padding-top: 2rem;
+    padding: 4rem;
+    margin-top: -5rem;
     opacity: 0; }
+  .planets-credit {
+    color: #f2f2f2; }
   .planets-title {
     padding: 2rem;
     visibility: hidden; }
@@ -406,6 +356,8 @@ p, ul, li, a {
     margin-top: -0.7rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr); }
+    .planets-info-holder {
+      padding: 2rem; }
     .planets-title {
       padding: 2rem; }
       .planets-title__text {
@@ -421,7 +373,7 @@ p, ul, li, a {
   .planets {
     margin-top: -0.7rem; }
     .planets-image-holder, .planets-info-holder {
-      max-width: 1440px;
+      max-width: 1200px;
       margin: 0 auto; }
     .planets-title {
       padding: 2rem; }
@@ -460,3 +412,7 @@ p, ul, li, a {
 @media screen and (min-width: 960px) {
   .planets-button {
     font-size: 1.4rem; } }
+
+@media screen and (min-width: 1440px) {
+  .planets-button {
+    margin-bottom: 5rem; } }

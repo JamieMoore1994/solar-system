@@ -17,3 +17,10 @@
         font-size: 1.4rem;
     }
 }
+
+// 1440px
+@media screen and (min-width: $xxxl) {
+    .planets-button {
+        margin-bottom: 5rem;
+    }
+}
