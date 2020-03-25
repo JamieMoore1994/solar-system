@@ -1,0 +1,83 @@
+/*------------------------------
+    Accessibibility
+------------------------------*/
+.skip-link {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: background-color 200ms ease;
+
+    &:focus {
+        display: block;
+        font-size: 1.5rem;
+        height: auto;
+        width: auto;
+        padding: 1.4rem 2rem;
+        background-color: $orange-main;
+        color: $black-main;
+        clip: auto;
+        border-radius: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        animation: skipLink 400ms ease-in;
+        z-index: 1000;
+    }
+}
+
+@keyframes skipLink {
+    0% {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skip-top {
+    position: fixed;
+    bottom: 3vh;
+    left: 85vw;
+    background-color: $black-light;
+    opacity: 0.6;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: opacity 200ms ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+ 
+    @media screen and (min-width: 50em) {
+        left: 92vw;
+    }
+ 
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+ }
+ 
+ .arrow-image {
+     width: 1.3rem;
+     height: 1.3rem;
+ 
+     @media screen and (min-width: 23.75em) {
+         width: 1.6rem;
+         height: 1.6rem;
+     }
+ 
+     @media screen and (min-width: 28.12em) {
+         width: 2.2rem;
+         height: 2.2rem;
+         bottom: 1vh
+     }
+ }

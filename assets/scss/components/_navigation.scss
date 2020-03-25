@@ -20,9 +20,46 @@
                 text-decoration: none;
                 text-transform: uppercase;
                 font-size: 1.2rem;
-                margin: 1rem;
+                margin: 1rem 0 0.5rem 0;
                 letter-spacing: .2rem;
                 font-weight: 700;
+                transition: color 200ms ease-in;
+                position: relative;
+
+                &:hover, &:active {
+                    color: $orange-main;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    transform-origin: bottom right;
+                    height: .2rem;
+                    border-radius: .2rem;
+                    width: 100%;
+                    background-color: $orange-main;
+                    transform: scale(0);
+                    transition: transform 300ms ease-in-out;
+                }
+
+                &:hover::after, &:focus::after {
+                    transform-origin: bottom left;
+                    transform: scale(1);
+                }
+            }
+
+            .active::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: .2rem;
+                border-radius: .2rem;
+                width: 100%;
+                background-color: $orange-main;
+                transform: unset;
             }
         }
     }

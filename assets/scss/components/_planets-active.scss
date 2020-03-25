@@ -22,7 +22,6 @@
         &-image  {
             padding: 4rem;
             margin-top: -5rem;
-            opacity: 0;
         }
 
         &-credit {
@@ -33,7 +32,6 @@
         // Planet title
         &-title {
             padding: 2rem;
-            visibility: hidden;
 
             &__text {
                 color: $grey-main;
@@ -44,7 +42,6 @@
         // Subtext
         &-subtext {
             padding: 0 2rem;
-            opacity: 0;
 
             &__text {
                 color: $orange-main;
@@ -55,7 +52,7 @@
         // Planet description
         &-description {
             padding: 2rem;
-            visibility: hidden;
+
 
             &__text {
                 color: $grey-main;
@@ -123,7 +120,7 @@
 //750px
 @media screen and (min-width: $med) {
     .planets {
-        padding-top: 3rem;
+        padding: 3rem 2rem 2rem 0;
         display: grid;
         grid-template-columns: 1.2fr 1fr;
     }
@@ -132,8 +129,7 @@
 //960px
 @media screen and (min-width: $large) {
     .planets-main__title {
-        margin: 4rem 0;
-        padding: 4rem;
+        margin-top: 4rem;
         font-size: 2.4rem;
     }
 }
@@ -144,8 +140,52 @@
         margin-top: -0.7rem;
         grid-template-columns: repeat(2, 1fr);
 
-        &-info-holder {
+        // Planet title
+        &-title {
             padding: 2rem;
+
+            &__text {
+                font-size: 2.7rem;
+            }
+        }
+
+        // Subtext
+        &-subtext {
+
+            &__text {
+                font-size: 2rem;
+            }
+        }
+
+        // Planet description
+        &-description {
+
+            &__text {
+                font-size: 1.6rem;
+            }
+        }
+
+        // Facts list 
+        &-facts {
+
+            &__list {
+
+                &--item {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+//1440px
+@media screen and (min-width: $xxxl) {
+    .planets {
+        margin-top: -0.7rem;
+
+        &-image-holder, &-info-holder {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         // Planet title
@@ -153,7 +193,7 @@
             padding: 2rem;
 
             &__text {
-                font-size: 2.7rem;
+                font-size: 3rem;
             }
         }
 
@@ -186,59 +226,13 @@
     }
 }
 
-//1440px
-@media screen and (min-width: $xxxl) {
-    .planets {
-        margin-top: -0.7rem;
-
-        &-image-holder, &-info-holder {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        // Planet title
-        &-title {
-            padding: 2rem;
-
-            &__text {
-                font-size: 3rem;
-            }
-        }
-
-        // Subtext
-        &-subtext {
-
-            &__text {
-                font-size: 2.2rem;
-            }
-        }
-
-        // Planet description
-        &-description {
-
-            &__text {
-                font-size: 2rem;
-            }
-        }
-
-        // Facts list 
-        &-facts {
-
-            &__list {
-
-                &--item {
-                    font-size: 1.8rem;
-                }
-            }
-        }
-    }
-}
-
 //1600px
 @media screen and (min-width: $sl) {
-    .planets {
-        margin-top: -11rem;
+    .planet-sections {
+        margin-top: -10rem;
+    }
 
+    .planets {
         // Planet title
         &-title {
             padding: 2rem;
