@@ -3,20 +3,16 @@ const starBackground = function() {
     // Variables to get all three svg files stars
     const starOdd = document.querySelector('.stars-background').querySelectorAll('.star-item:nth-child(odd)');
     const starEven = document.querySelector('.stars-background').querySelectorAll('.star-item:nth-child(even)');
-    const starOddTwo = document.querySelector('#star-background-two').querySelectorAll('.star-item:nth-child(odd)');
-    const starEvenTwo = document.querySelector('#star-background-two').querySelectorAll('.star-item:nth-child(even)');
     const starOddThree = document.querySelector('#star-background-about').querySelectorAll('.star-item:nth-child(odd)');
     const starEvenThree = document.querySelector('#star-background-about').querySelectorAll('.star-item:nth-child(even)');
 
     // Initiating timeline
     var tl = new TimelineMax({repeat: -1, yoyo: true, ease: "bounce.out"});
         tl
-        .fromTo(starOdd, 1.2, {opacity: 0.2, autoAlpha: 0}, {opacity: 1, autoAlpha: 1})
-        .fromTo(starEven, 1.5, {opacity: 0.2, autoAlpha: 0}, {opacity: 0.5, autoAlpha: 1}, 0)
-        .fromTo(starOddTwo, 1.2, {opacity: 0.2, autoAlpha: 0}, {opacity: 1, autoAlpha: 1}, 0)
-        .fromTo(starEvenTwo, 1.5, {opacity: 0.2, autoAlpha: 0}, {opacity: 0.5, autoAlpha: 1}, 0)
-        .fromTo(starOddThree, 1.2, {opacity: 0.2, autoAlpha: 0}, {opacity: 1, autoAlpha: 1}, 0)
-        .fromTo(starEvenThree, 1.5, {opacity: 0.2, autoAlpha: 0}, {opacity: 0.5, autoAlpha: 1}, 0)
+        .fromTo(starOdd, 1.2, {opacity: 0.2}, {opacity: 1})
+        .fromTo(starEven, 1.5, {opacity: 0.2}, {opacity: 0.5}, 0)
+        .fromTo(starOddThree, 1.2, {opacity: 0.2}, {opacity: 1}, 0)
+        .fromTo(starEvenThree, 1.5, {opacity: 0.2}, {opacity: 0.5}, 0)
     }
     starBackground();
 
@@ -41,7 +37,7 @@ const starBackground = function() {
                 // Scroll magic targeting the about section
                 var scene = new ScrollMagic.Scene({
                     triggerElement: aboutSectionTrigger,
-                    triggerHook: 0.2,
+                    triggerHook: 0.25,
                     duration: 200
                 })
                     // .addIndicators({
@@ -78,8 +74,7 @@ const starBackground = function() {
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1, 
+                    autoAlpha: 1,
                     xPercent: '0%', 
                     y: '0%'
                 })
@@ -115,8 +110,8 @@ const starBackground = function() {
             
             var scene = new ScrollMagic.Scene({
                 triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
+                triggerHook: 0.4,
+                duration: 380
             })
                 // .addIndicators({
                 //     colorTrigger: "white",
@@ -125,8 +120,22 @@ const starBackground = function() {
                 //     indent: 5
                 // })
                 .setTween(tlSun)
-                .setPin(trigger)
                 .addTo(controller)
+
+                // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                    var scene = new ScrollMagic.Scene({
+                        triggerElement: trigger,
+                        triggerHook: 0.1,
+                        duration: 800
+                    })
+
+                    .setTween(tlSun)
+                    .setPin(trigger)
+                    .addTo(controller)
+
+                }
+
         }
         sun();
 
@@ -152,8 +161,7 @@ const starBackground = function() {
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1, 
+                    autoAlpha: 1,
                     xPercent: '0%', 
                     y: '0%'
                 })
@@ -187,20 +195,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlMercury)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlMercury)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlMercury)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         mercury();
 
@@ -226,8 +247,7 @@ const starBackground = function() {
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
+                    autoAlpha: 1,  
                     y: '0%'
                 })
                 .from(planetTitle, 1, {
@@ -260,20 +280,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var sceneTwo = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlVenus)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlVenus)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlVenus)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         venus();
 
@@ -294,14 +327,13 @@ const starBackground = function() {
             var tlEarth = new TimelineMax({ease: "power3.out"});
             tlEarth
                 .fromTo(planetImage, 1, {
-                    yPercent: '100%', 
+                    xPercent: '100%', 
                     opacity: 0, 
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
-                    y: '0%'
+                    autoAlpha: 1,  
+                    xPercent: '0%'
                 })
                 .from(planetTitle, 1, {
                     yPercent: '-20px',
@@ -333,20 +365,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var sceneTwo = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlEarth)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlEarth)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlEarth)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         earth();
 
@@ -372,8 +417,7 @@ const starBackground = function() {
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
+                    autoAlpha: 1,  
                     xPercent: '0'
                 })
                 .from(planetTitle, 1, {
@@ -406,20 +450,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlMars)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlMars)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlMars)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         mars();
 
@@ -440,13 +497,12 @@ const starBackground = function() {
             var tlJupiter = new TimelineMax({ease: "power3.out"});
             tlJupiter
                 .fromTo(planetImage, 1, {
-                    yPercent: '100%', 
+                    yPercent: '-100%', 
                     opacity: 0, 
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
+                    autoAlpha: 1,  
                     yPercent: '0'
                 })
                 .from(planetTitle, 1, {
@@ -479,20 +535,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlJupiter)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlJupiter)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlJupiter)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         jupiter();
 
@@ -519,7 +588,6 @@ const starBackground = function() {
                 }, {
                     opacity: 1, 
                     autoAlpha: 1, 
-                    scale: 1,  
                     yPercent: '0'
                 })
                 .from(planetTitle, 1, {
@@ -552,20 +620,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlSaturn)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlSaturn)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlSaturn)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         saturn();
 
@@ -591,8 +672,7 @@ const starBackground = function() {
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
+                    autoAlpha: 1,  
                     xPercent: '0'
                 })
                 .from(planetTitle, 1, {
@@ -625,20 +705,33 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlUranus)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlUranus)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlUranus)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         uranus();
 
@@ -659,13 +752,12 @@ const starBackground = function() {
             var tlNeptune = new TimelineMax({ease: "power3.out"});
             tlNeptune
                 .fromTo(planetImage, 1, {
-                    yPercent: '100%', 
+                    yPercent: '-100%', 
                     opacity: 0, 
                     autoAlpha: 0
                 }, {
                     opacity: 1, 
-                    autoAlpha: 1, 
-                    scale: 1,  
+                    autoAlpha: 1,
                     yPercent: '0'
                 })
                 .from(planetTitle, 1, {
@@ -698,28 +790,37 @@ const starBackground = function() {
                     opacity: 0
                 }, '-=0.5');
             
-            var scene = new ScrollMagic.Scene({
-                triggerElement: trigger,
-                triggerHook: 0.1,
-                duration: 800
-            })
-                // .addIndicators({
-                //     colorTrigger: "white",
-                //     colorStart: "white",
-                //     colorEnd: "white",
-                //     indent: 5
-                // })
-                .setTween(tlNeptune)
-                .setPin(trigger)
-                .addTo(controller)
+                var scene = new ScrollMagic.Scene({
+                    triggerElement: trigger,
+                    triggerHook: 0.4,
+                    duration: 380
+                })
+                    // .addIndicators({
+                    //     colorTrigger: "white",
+                    //     colorStart: "white",
+                    //     colorEnd: "white",
+                    //     indent: 5
+                    // })
+                    .setTween(tlNeptune)
+                    .addTo(controller)
+    
+                    // Targets all browsers except Safari to set pin to the trigger. There was a bug on Safari
+                    if (navigator.userAgent !== 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.5 Safari/605.1.15') {
+                        var scene = new ScrollMagic.Scene({
+                            triggerElement: trigger,
+                            triggerHook: 0.1,
+                            duration: 800
+                        })
+    
+                        .setTween(tlNeptune)
+                        .setPin(trigger)
+                        .addTo(controller)
+    
+                    }
         }
         neptune();
     }
     runAnimations();
-
-
-
-
 
 
 

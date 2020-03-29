@@ -7,8 +7,7 @@
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow-x: hidden; }
+  box-sizing: border-box; }
 
 body {
   min-width: 320px;
@@ -20,6 +19,9 @@ p, h1, h2, h3, h4, ul, a, li {
 
 img {
   max-width: 100%; }
+
+.wrapper {
+  overflow-x: hidden; }
 
 h1, h2, h3, h4 {
   font-family: malaga, serif; }
@@ -124,26 +126,27 @@ p, ul, li, a, span {
       bottom: 1vh; } }
 
 .banner {
-  position: relative; }
-  .banner-stars .stars-background {
-    position: relative;
-    z-index: 2; }
-  .banner-stars #star-background-two {
-    margin-top: -1rem;
-    display: block;
-    z-index: 3; }
+  position: relative;
+  background-color: #000000;
+  padding: 2rem 0; }
+  .banner-stars {
+    width: 100%;
+    height: 100%; }
+    .banner-stars .stars-background {
+      position: relative;
+      z-index: 2; }
   .banner-intro {
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 50%;
-    -webkit-transform: translate(-50%, -25%);
-    -ms-transform: translate(-50%, -25%);
-    transform: translate(-50%, -25%);
+    -webkit-transform: translate(-50%, -35%);
+    -ms-transform: translate(-50%, -35%);
+    transform: translate(-50%, -35%);
     z-index: 2; }
     .banner-intro__title {
       color: #f2f2f2;
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       line-height: 1.2; }
     .banner-intro__text {
       color: #f2f2f2;
@@ -161,6 +164,7 @@ p, ul, li, a, span {
     -ms-transform: translate(-50%, -15%);
     transform: translate(-50%, -15%); }
     .banner-intro__title {
+      margin-top: 2rem;
       font-size: 3rem; } }
 
 @media screen and (min-width: 500px) {
@@ -169,10 +173,6 @@ p, ul, li, a, span {
     -webkit-transform: translate(-50%, -35%);
     -ms-transform: translate(-50%, -35%);
     transform: translate(-50%, -35%); } }
-
-@media screen and (min-width: 750px) {
-  .banner-stars #star-background-two {
-    display: none; } }
 
 @media screen and (min-width: 960px) {
   .banner-title {
@@ -466,11 +466,14 @@ p, ul, li, a, span {
       display: none; } }
 
 .planet-sections {
-  background-color: #000000; }
+  background-color: #000000;
+  padding-top: 5rem;
+  overflow-x: hidden; }
 
 .planets-main__title {
   color: #f2f2f2;
   padding: 2rem;
+  margin-top: 4rem;
   line-height: 1.2;
   position: relative;
   z-index: 5;
@@ -486,7 +489,8 @@ p, ul, li, a, span {
   position: relative; }
   .planets-image {
     padding: 4rem;
-    margin-top: -5rem; }
+    margin-top: -5rem;
+    z-index: 5; }
   .planets-credit {
     color: #f2f2f2; }
   .planets-title {

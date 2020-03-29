@@ -1,10 +1,13 @@
 .planet-sections {
     background-color: $black-main;
+    padding-top: 5rem;
+    overflow-x: hidden;
 }
 
 .planets-main__title {
     color: $grey-main;
     padding: 2rem;
+    margin-top: 4rem;
     line-height: 1.2;
     position: relative;
     z-index: 5;
